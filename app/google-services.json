@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "240885188116",
+    "firebase_url": "https://rentresidence-f46d8.firebaseio.com",
+    "project_id": "rentresidence-f46d8",
+    "storage_bucket": "rentresidence-f46d8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:240885188116:android:e75290a849d6f834",
+        "android_client_info": {
+          "package_name": "br.com.jborges.rentresidence"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "240885188116-d2bkul530pms21s9mf56opqor3pj5upq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.jborges.rentresidence",
+            "certificate_hash": "de9383bd562e5397525d5f3eeb42824837e2c52a"
+          }
+        },
+        {
+          "client_id": "240885188116-ll5irdpalo4o1rh6mdhb9ucl0398p910.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaf9oTPlrKJbIzoz0oK2x83LNaslevL2w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "240885188116-ll5irdpalo4o1rh6mdhb9ucl0398p910.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

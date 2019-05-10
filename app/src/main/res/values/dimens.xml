@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="margin5">5dp</dimen>
+    <dimen name="margin10">10dp</dimen>
+    <dimen name="heightLogoVersao">225dp</dimen>
+    <dimen name="font20">20sp</dimen>
+    <dimen name="recyHeight">452dp</dimen>
+    <dimen name="marginBottom">60dp</dimen>
+    <dimen name="heightNome">113dp</dimen>
+    <dimen name="font30">30sp</dimen>
+    <dimen name="heightIvLogo">225dp</dimen>
+    <dimen name="margin0">0dp</dimen>
+    <dimen name="CadElev">4dp</dimen>
+    <dimen name="font28">28sp</dimen>
+    <dimen name="largura_logo_splash">150dp</dimen>
+    <dimen name="altura_logo_splash">150dp</dimen>
+    <dimen name="splash_largura">250dp</dimen>
+    <dimen name="splash_altura">250dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+</resources>

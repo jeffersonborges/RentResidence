@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Rent Residence</string>
+    <string name="hint_Email">Digite seu e-mail</string>
+    <string name="tv_Password">Senha*</string>
+    <string name="hint_Password">Insira uma senha</string>
+    <string name="tv_Password2">Redigite sua senha</string>
+    <string name="hint_Password2">Redigite sua senha</string>
+    <string name="bt_Add">Cadastrar</string>
+    <string name="bt_Cancel">Cancelar</string>
+    <string name="et_Password">Insira a senha</string>
+    <string name="et_Password2">Repetir senha</string>
+    <string name="menu_sair">Sair</string>
+    <string name="menu_share">Compartilhar</string>
+    <string name="title_activity_principal2">Adicionar</string>
+    <string name="menu_cadastro">Cadastro</string>
+    <string name="menu_mapa">Onde nos encontrar</string>
+    <string name="menu_sobre">Sobre</string>
+    <string name="menu_listagem">Listagem</string>
+    <string name="tv_user_logout">Usuário deslogado com sucesso</string>
+    <string name="google_maps_key">AIzaSyC8YvM_sV963TGc7nKQ-fu_1_-s9kz_f4Y</string>
+    <string name="nav_header_title">Rent A Residence</string>
+</resources>

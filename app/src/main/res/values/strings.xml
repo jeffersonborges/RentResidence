@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Rent Residence</string>
+    <string name="hint_Email">"Type your e-mail "</string>
+    <string name="tv_Password">Password*</string>
+    <string name="hint_Password">Type your password</string>
+    <string name="tv_Password2">Retype your password</string>
+    <string name="hint_Password2">Retype your password</string>
+    <string name="bt_Add">Add</string>
+    <string name="bt_Cancel">Cancel</string>
+    <string name="et_Password">Insert password</string>
+    <string name="et_Password2">Repeat password</string>
+    <string name="title_activity_teste">TesteActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Rent A Residence</string>
+    <string name="nav_header_subtitle">Developer Jefferson Borges</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings Jeffão2</string>
+
+    <string name="menu_cadastro">Add record</string>
+    <string name="menu_listagem">Listing</string>
+    <string name="menu_mapa">Where find us</string>
+    <string name="menu_sobre">About</string>]
+    <string name="menu_share">Share</string>
+    <string name="menu_sair">Exit</string>
+    <string name="title_activity_principal2">Add</string>
+    <string name="tv_user_logout">User successfully logged out</string>
+    <string name="title_activity_menu">MenuActivity</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_send">Send</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="google_maps_key">AIzaSyC8YvM_sV963TGc7nKQ-fu_1_-s9kz_f4Y</string>
+    <string name="title_activity_maps">Map</string>
+</resources>
