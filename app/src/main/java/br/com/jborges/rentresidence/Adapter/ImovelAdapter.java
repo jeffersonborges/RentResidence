@@ -72,8 +72,7 @@ public class ImovelAdapter extends RecyclerView.Adapter<ImovelAdapter.ViewHolder
 
         private void setData(Imovel imoveis) {
 
-            tvEndereco.setText("Local: " + imoveis.endereco);
-
+            tvEndereco.setText("Local: " + imoveis.endereco + ", " + imoveis.numero);
         }
     }
 }
