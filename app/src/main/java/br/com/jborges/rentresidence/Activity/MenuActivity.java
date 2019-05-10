@@ -8,6 +8,7 @@
 
 package br.com.jborges.rentresidence.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -27,6 +28,7 @@ import br.com.jborges.rentresidence.Entidade.Imovel;
 import br.com.jborges.rentresidence.Fragments.AboutFragment;
 import br.com.jborges.rentresidence.Fragments.AddPlaceFragment;
 import br.com.jborges.rentresidence.Fragments.PlaceListingFragment;
+import br.com.jborges.rentresidence.MapsActivity;
 import br.com.jborges.rentresidence.R;
 
 /**
@@ -106,7 +108,8 @@ public class MenuActivity extends AppCompatActivity
         } else if (id == R.id.nav_cadastro) {
             fragment = new AddPlaceFragment();
         } else if (id == R.id.nav_onde_encontrar) {
-            //fragment = new MapFragment();
+            startActivity(new Intent(getBaseContext(), MapsActivity.class));
+            finish();
         } else if (id == R.id.nav_sobre) {
             fragment = new AboutFragment();
         }

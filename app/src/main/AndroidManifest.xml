@@ -41,8 +41,10 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <uses-library android:name="com.google.android.maps" />
-
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps"></activity>
+        <!-- <uses-library android:name="com.google.android.maps" /> -->
         <activity
             android:name=".Activity.MenuActivity"
             android:label="@string/title_activity_menu"
