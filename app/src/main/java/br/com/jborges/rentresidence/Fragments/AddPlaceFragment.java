@@ -59,8 +59,6 @@ public class AddPlaceFragment extends Fragment {
             operacao = "inserir";
         }
 
-
-
         etEndereco = view.findViewById(R.id.etEndereco);
         etNumero = view.findViewById(R.id.etNumero);
         etBairro = view.findViewById(R.id.etBairro);
@@ -126,7 +124,7 @@ public class AddPlaceFragment extends Fragment {
             umImovel.telefone = etTelefone.getText().toString();
 
             if (imovelDAO.inserir(umImovel)) {
-                Toast.makeText(getActivity(), "Salvo com sucesso!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Gravado com sucesso!", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(getActivity(), "Operação não realizada!", Toast.LENGTH_SHORT).show();
             }
@@ -160,9 +158,9 @@ public class AddPlaceFragment extends Fragment {
 
     public void excluir() {
         Toast.makeText(getActivity(), operacao, Toast.LENGTH_SHORT).show();
-        if(operacao.equals("alterar")){
+        if(operacao.equals("excluir")){
             if ( imovelDAO.excluir(id)) {
-                Toast.makeText(getActivity(), "Excluido com sucesso!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Excluído com sucesso!", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(getActivity(), "Operação não realizada!", Toast.LENGTH_SHORT).show();
             }
