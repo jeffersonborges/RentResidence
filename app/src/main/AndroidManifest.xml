@@ -62,9 +62,6 @@
             android:name=".Activity.LoginEmailActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Activity.EnviarEmailActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".Activity.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/FullScreen">

@@ -26,7 +26,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import br.com.jborges.rentresidence.Entidade.Imovel;
 import br.com.jborges.rentresidence.Fragments.AboutFragment;
 import br.com.jborges.rentresidence.Fragments.AddPlaceFragment;
-import br.com.jborges.rentresidence.Fragments.MapFragment;
 import br.com.jborges.rentresidence.Fragments.PlaceListingFragment;
 import br.com.jborges.rentresidence.R;
 
@@ -107,7 +106,7 @@ public class MenuActivity extends AppCompatActivity
         } else if (id == R.id.nav_cadastro) {
             fragment = new AddPlaceFragment();
         } else if (id == R.id.nav_onde_encontrar) {
-            fragment = new MapFragment();
+            //fragment = new MapFragment();
         } else if (id == R.id.nav_sobre) {
             fragment = new AboutFragment();
         }
