@@ -110,8 +110,6 @@ public class AddPlaceFragment extends Fragment {
             }
         });
 
-
-
         imovelDAO = new ImovelDAO(getActivity());
 
         return view;

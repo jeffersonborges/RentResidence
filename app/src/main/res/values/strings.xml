@@ -5,8 +5,8 @@
     <string name="hint_Password">Type your password</string>
     <string name="tv_Password2">Retype your password</string>
     <string name="hint_Password2">Retype your password</string>
-    <string name="bt_Add">Add</string>
-    <string name="bt_Cancel">Cancel</string>
+    <string name="bt_Add">ADD</string>
+    <string name="bt_Cancel">CANCEL</string>
     <string name="et_Password">Insert password</string>
     <string name="et_Password2">Repeat password</string>
     <string name="title_activity_teste">TesteActivity</string>

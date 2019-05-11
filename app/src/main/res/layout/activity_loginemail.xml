@@ -36,14 +36,14 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Logar"
+        android:text="LOGAR"
         android:textAllCaps="false" />
 
     <Button
         android:id="@+id/button_Recuperar"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Recuperar senha"
+        android:text="RECUPERAR SENHA"
         android:textAllCaps="false" />
 
 </LinearLayout>

@@ -31,7 +31,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add);
+        setContentView(R.layout.activity_adduser);
 
         editText_Email = (EditText) findViewById(R.id.editText_EmailCadastro);
         editText_Senha = (EditText) findViewById(R.id.editText_SenhaCadastro);

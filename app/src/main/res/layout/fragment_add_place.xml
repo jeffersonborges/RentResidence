@@ -27,14 +27,14 @@
                 android:layout_height="wrap_content"
                 android:text="Endereco"
                 android:textStyle="bold"
-                android:textSize="16sp"
+                android:textSize="@dimen/font14"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
                 android:id="@+id/etEndereco"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
+                android:inputType="textCapSentences" />
         </LinearLayout>
 
         <LinearLayout
@@ -47,7 +47,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
+                android:textSize="@dimen/font14"
                 android:textStyle="bold"
                 android:text="Número"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -55,7 +55,8 @@
             <EditText
                 android:id="@+id/etNumero"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences"/>
         </LinearLayout>
 
         <LinearLayout
@@ -68,7 +69,7 @@
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
+                android:textSize="@dimen/font14"
                 android:textStyle="bold"
                 android:text="Bairro"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -76,7 +77,8 @@
             <EditText
                 android:id="@+id/etBairro"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences"/>
         </LinearLayout>
 
         <LinearLayout
@@ -90,7 +92,7 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
+                android:textSize="@dimen/font14"
                 android:text="Cidade"
                 android:textStyle="bold"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -98,7 +100,8 @@
             <EditText
                 android:id="@+id/etCidade"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences"/>
         </LinearLayout>
 
         <LinearLayout
@@ -112,7 +115,7 @@
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
+                android:textSize="@dimen/font14"
                 android:text="Estado"
                 android:textStyle="bold"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -120,7 +123,8 @@
             <EditText
                 android:id="@+id/etEstado"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences"/>
         </LinearLayout>
 
         <LinearLayout
@@ -134,7 +138,7 @@
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
+                android:textSize="@dimen/font14"
                 android:text="Imobiliária"
                 android:textStyle="bold"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -142,7 +146,8 @@
             <EditText
                 android:id="@+id/etImobiliaria"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences"/>
         </LinearLayout>
 
         <LinearLayout
@@ -156,7 +161,7 @@
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
+                android:textSize="@dimen/font14"
                 android:text="Telefone"
                 android:textStyle="bold"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -164,7 +169,8 @@
             <EditText
                 android:id="@+id/etTelefone"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences"/>
         </LinearLayout>
 
         <LinearLayout

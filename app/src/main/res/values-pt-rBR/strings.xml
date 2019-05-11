@@ -6,8 +6,8 @@
     <string name="hint_Password">Insira uma senha</string>
     <string name="tv_Password2">Redigite sua senha</string>
     <string name="hint_Password2">Redigite sua senha</string>
-    <string name="bt_Add">Cadastrar</string>
-    <string name="bt_Cancel">Cancelar</string>
+    <string name="bt_Add">CADASTAR</string>
+    <string name="bt_Cancel">CANCELAR</string>
     <string name="et_Password">Insira a senha</string>
     <string name="et_Password2">Repetir senha</string>
     <string name="menu_sair">Sair</string>
