@@ -54,14 +54,19 @@ public class ImovelAdapter extends RecyclerView.Adapter<ImovelAdapter.ViewHolder
 
     class ViewHolder extends RecyclerView.ViewHolder {
         private TextView tvEndereco;
-        private TextView tvNumero;
+        private  TextView tvBairro;
+        private TextView tvCidadeEstado;
+        private TextView tvImobiliaria;
+        private TextView tvTelefoneImobiliaria;
 
         private ViewHolder(final View itemView) {
             super(itemView);
 
             tvEndereco = (TextView) itemView.findViewById(R.id.tvEndereco);
-            tvNumero = (TextView) itemView.findViewById(R.id.tvNumero);
-
+            tvBairro = (TextView) itemView.findViewById(R.id.tvBairro);
+            tvCidadeEstado = (TextView) itemView.findViewById(R.id.tvCidadeEstado);
+            tvImobiliaria = (TextView) itemView.findViewById(R.id.tvImobiliaria);
+            tvTelefoneImobiliaria = (TextView) itemView.findViewById(R.id.tvTelefoneImobiliaria);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -75,8 +80,11 @@ public class ImovelAdapter extends RecyclerView.Adapter<ImovelAdapter.ViewHolder
 
         private void setData(Imovel imoveis) {
 
-            tvEndereco.setText("Local: " + imoveis.endereco + ", " + imoveis.numero);
-            tvNumero.setText(imoveis.cidade + " - " + imoveis.estado);
+            tvEndereco.setText("Endereço: " + imoveis.endereco + ", " + imoveis.numero);
+            tvBairro.setText("Bairro: " + imoveis.bairro);
+            tvCidadeEstado.setText("Cidade/UF: " +imoveis.cidade + " - " + imoveis.estado);
+            tvImobiliaria.setText("Imobiliária: " + imoveis.imobiliaria);
+            tvTelefoneImobiliaria.setText("Telefone Imobiliária: " +imoveis.telefone);
         }
     }
 }
