@@ -163,7 +163,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/font14"
                 android:text="Telefone"
-                android:inputType="phone"
+                android:inputType="number"
                 android:textStyle="bold"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
