@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import br.com.jborges.rentresidence.Activity.MenuActivity;
 import br.com.jborges.rentresidence.Entidade.Imovel;
 import br.com.jborges.rentresidence.Persistencia.ImovelDAO;
 import br.com.jborges.rentresidence.R;
@@ -58,6 +59,12 @@ public class AddPlaceFragment extends Fragment {
         }else{
             operacao = "inserir";
         }
+
+        if(operacao.equalsIgnoreCase("inserir"))
+            ((MenuActivity)getActivity()).getSupportActionBar().setTitle("Inserir imóvel");
+        else
+            ((MenuActivity)getActivity()).getSupportActionBar().setTitle("Alterar dados");
+
 
         etEndereco = view.findViewById(R.id.etEndereco);
         etNumero = view.findViewById(R.id.etNumero);
@@ -125,12 +132,11 @@ public class AddPlaceFragment extends Fragment {
 
             if (imovelDAO.inserir(umImovel)) {
                 Toast.makeText(getActivity(), "Gravado com sucesso!", Toast.LENGTH_SHORT).show();
+                fechar();
             } else {
                 Toast.makeText(getActivity(), "Operação não realizada!", Toast.LENGTH_SHORT).show();
             }
-        }
-
-        if(operacao.equals("alterar")){
+        }else if(operacao.equals("alterar")){
             Imovel umImovel = new Imovel();
             umImovel.id = id;
             umImovel.endereco = etEndereco.getText().toString();
@@ -143,13 +149,7 @@ public class AddPlaceFragment extends Fragment {
 
             if (imovelDAO.alterar(umImovel)) {
                 Toast.makeText(getActivity(), "Salvo com sucesso!", Toast.LENGTH_SHORT).show();
-                etEndereco.setText("");
-                etNumero.setText("");
-                etBairro.setText("");
-                etCidade.setText("");
-                etEstado.setText("");
-                etImobiliaria.setText("");
-                etTelefone.setText("");
+                fechar();
             } else {
                 Toast.makeText(getActivity(), "Operação não realizada!", Toast.LENGTH_SHORT).show();
             }
@@ -157,10 +157,10 @@ public class AddPlaceFragment extends Fragment {
     }
 
     public void excluir() {
-        Toast.makeText(getActivity(), operacao, Toast.LENGTH_SHORT).show();
-        if(operacao.equals("excluir")){
+        if(operacao.equals("alterar")){
             if ( imovelDAO.excluir(id)) {
                 Toast.makeText(getActivity(), "Excluído com sucesso!", Toast.LENGTH_SHORT).show();
+                fechar();
             } else {
                 Toast.makeText(getActivity(), "Operação não realizada!", Toast.LENGTH_SHORT).show();
             }
@@ -168,8 +168,10 @@ public class AddPlaceFragment extends Fragment {
     }
 
     public void fechar(){
-        if(getActivity() != null)
-            getActivity().getSupportFragmentManager().popBackStack();
-        Toast.makeText(getActivity(), "Cliquei no botão fechar!", Toast.LENGTH_SHORT).show();
+        if(getActivity() != null){
+            ((MenuActivity)getActivity()).openPlaceListingFragment();
+        }
+
+        //Toast.makeText(getActivity(), "Cliquei no botão fechar!", Toast.LENGTH_SHORT).show();
     }
 }

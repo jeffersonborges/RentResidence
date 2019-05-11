@@ -8,7 +8,6 @@
 
 package br.com.jborges.rentresidence.Activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -27,8 +26,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import br.com.jborges.rentresidence.Entidade.Imovel;
 import br.com.jborges.rentresidence.Fragments.AboutFragment;
 import br.com.jborges.rentresidence.Fragments.AddPlaceFragment;
+import br.com.jborges.rentresidence.Fragments.MapFragment;
 import br.com.jborges.rentresidence.Fragments.PlaceListingFragment;
-import br.com.jborges.rentresidence.MapsActivity;
 import br.com.jborges.rentresidence.R;
 
 /**
@@ -59,6 +58,8 @@ public class MenuActivity extends AppCompatActivity
         fragmentManager.beginTransaction()
                 .replace(R.id.container, fragment)
                 .commit();
+
+        getSupportActionBar().setTitle("Listagem de imóveis");
 
     }
 
@@ -104,13 +105,17 @@ public class MenuActivity extends AppCompatActivity
         fragmentManager = getSupportFragmentManager(); // For AppCompat use getSupportFragmentManager
 
         if (id == R.id.nav_home) {
+            getSupportActionBar().setTitle("Listagem de imóveis");
             fragment = new PlaceListingFragment();
         } else if (id == R.id.nav_cadastro) {
             fragment = new AddPlaceFragment();
         } else if (id == R.id.nav_onde_encontrar) {
-            startActivity(new Intent(getBaseContext(), MapsActivity.class));
-            finish();
+            getSupportActionBar().setTitle("Onde nos encontrar");
+            //startActivity(new Intent(getBaseContext(), MapsActivity.class));
+            //finish();
+            fragment = new MapFragment();
         } else if (id == R.id.nav_sobre) {
+            getSupportActionBar().setTitle("Sobre");
             fragment = new AboutFragment();
         }
         else if (id == R.id.nav_sair) {
@@ -141,5 +146,18 @@ public class MenuActivity extends AppCompatActivity
         fragmentManager.beginTransaction()
                 .replace(R.id.container, fragment)
                 .commit();
+    }
+
+    public void openPlaceListingFragment(){
+        Fragment fragment = new PlaceListingFragment();
+        Bundle bundle = new Bundle();
+
+        fragment.setArguments(bundle);
+
+        fragmentManager.beginTransaction()
+                .replace(R.id.container, fragment)
+                .commit();
+
+        getSupportActionBar().setTitle("Listagem de imóveis");
     }
 }

@@ -31,8 +31,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import br.com.jborges.rentresidence.R;
 import br.com.jborges.rentresidence.Util.Util;
 
-import static android.app.PendingIntent.getActivity;
-
 /**
  * Jefferson Borges - 2019
  */
@@ -134,7 +132,7 @@ public class LoginEmailActivity extends AppCompatActivity implements View.OnClic
 
                 if (task.isSuccessful()) {
 
-                    startActivity(new Intent(getBaseContext(), PrincipalActivity.class));
+                    startActivity(new Intent(getBaseContext(), MenuActivity.class));
                     finish();
                     dialog.dismiss();
                 } else {

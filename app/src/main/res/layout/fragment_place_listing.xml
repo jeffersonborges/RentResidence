@@ -7,16 +7,10 @@
     android:orientation="vertical"
     tools:context="br.com.jborges.rentresidence.Fragments.PlaceListingFragment">
 
-
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="Tela de listagem" />
-
-    <TextView
-        android:visibility="gone"
         android:id="@+id/empty_list"
+        android:visibility="gone"
+        android:textAlignment="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Você não possui itens cadastrados!"/>

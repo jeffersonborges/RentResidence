@@ -54,11 +54,14 @@ public class ImovelAdapter extends RecyclerView.Adapter<ImovelAdapter.ViewHolder
 
     class ViewHolder extends RecyclerView.ViewHolder {
         private TextView tvEndereco;
+        private TextView tvNumero;
 
         private ViewHolder(final View itemView) {
             super(itemView);
 
             tvEndereco = (TextView) itemView.findViewById(R.id.tvEndereco);
+            tvNumero = (TextView) itemView.findViewById(R.id.tvNumero);
+
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -73,6 +76,7 @@ public class ImovelAdapter extends RecyclerView.Adapter<ImovelAdapter.ViewHolder
         private void setData(Imovel imoveis) {
 
             tvEndereco.setText("Local: " + imoveis.endereco + ", " + imoveis.numero);
+            tvNumero.setText(imoveis.cidade + " - " + imoveis.estado);
         }
     }
 }
