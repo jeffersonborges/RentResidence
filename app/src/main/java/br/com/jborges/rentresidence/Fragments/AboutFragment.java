@@ -3,6 +3,7 @@ package br.com.jborges.rentresidence.Fragments;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,13 +12,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import br.com.jborges.rentresidence.Activity.MainActivity;
-import br.com.jborges.rentresidence.MapsActivity;
 import br.com.jborges.rentresidence.R;
 
 /**
@@ -26,8 +23,9 @@ import br.com.jborges.rentresidence.R;
 
 public class AboutFragment extends Fragment {
 
-    Button btnFazer_Ligacao;
+    ImageButton btnFazer_Ligacao;
     TextView telefone;
+    TextView VersionCode;
 
     public AboutFragment() {
         // Required empty public constructor
@@ -40,6 +38,9 @@ public class AboutFragment extends Fragment {
 
         final View view = inflater.inflate(R.layout.fragment_about, container, false);
         telefone = view.findViewById(R.id.about_telephone_number);
+
+        VersionCode = view.findViewById(R.id.about_version);
+        VersionCode.setText(String.valueOf(1.0));
 
         btnFazer_Ligacao = view.findViewById(R.id.fazerligacao);
         btnFazer_Ligacao.setOnClickListener(new View.OnClickListener() {
