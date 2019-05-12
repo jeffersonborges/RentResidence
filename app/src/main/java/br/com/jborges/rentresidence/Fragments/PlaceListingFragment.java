@@ -43,9 +43,9 @@ public class PlaceListingFragment extends Fragment {
         listaImoveis = imovelDAO.listar();
 
         tvEmptyList = view.findViewById(R.id.empty_list);
-        if(listaImoveis.isEmpty()){
+        if (listaImoveis.isEmpty()) {
             tvEmptyList.setVisibility(View.VISIBLE);
-        }else{
+        } else {
             tvEmptyList.setVisibility(View.GONE);
         }
 
@@ -66,6 +66,7 @@ public class PlaceListingFragment extends Fragment {
                 ImovelAdapter adapter = (ImovelAdapter) mRecyclerView.getAdapter();
 
             }
+
         });
 
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
@@ -73,7 +74,7 @@ public class PlaceListingFragment extends Fragment {
         mRecyclerView.setLayoutManager(llm);
 
         ImovelAdapter adapter = new ImovelAdapter(listaImoveis);
-        adapter.setContext((MenuActivity)getActivity());
+        adapter.setContext((MenuActivity) getActivity());
         mRecyclerView.setAdapter(adapter);
 
         return view;

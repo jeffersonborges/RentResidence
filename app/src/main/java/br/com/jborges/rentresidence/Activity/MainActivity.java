@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             //Abre tela de adicionar novo usuário
             case R.id.button_AddUser:
-                startActivity(new Intent(this, AddActivity.class));
+                startActivity(new Intent(this, AddUserActivity.class));
                 break;
 
             //Desloga usuário do aplicativo

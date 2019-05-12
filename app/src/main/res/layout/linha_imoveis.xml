@@ -13,7 +13,6 @@
         app:layout_constraintBottom_toTopOf="@+id/tvBairro"
         app:layout_constraintTop_toTopOf="@+id/tvBairro">
 
-
         <TextView
             android:id="@+id/tvEndereco"
             android:layout_width="match_parent"
@@ -97,7 +96,20 @@
             tools:text="Telefone Imobiliária" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/ib_compartilhar"
+            android:layout_width="55dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTelefoneImobiliaria"
+            app:srcCompat="@drawable/whatsapp" />
+
+        <ImageButton
+            android:id="@+id/ib_deletar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -109,18 +121,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tvTelefoneImobiliaria"
             app:srcCompat="@android:drawable/ic_delete" />
 
-        <ImageButton
-            android:id="@+id/imageButton4"
-            android:layout_width="55dp"
-            android:layout_height="51dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTelefoneImobiliaria"
-            app:srcCompat="@drawable/whatsapp" />
+
 
     </android.support.constraint.ConstraintLayout>
 
