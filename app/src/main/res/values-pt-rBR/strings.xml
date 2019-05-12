@@ -10,7 +10,7 @@
     <string name="bt_Cancel">CANCELAR</string>
     <string name="et_Password">Insira a senha</string>
     <string name="et_Password2">Repetir senha</string>
-    <string name="menu_sair">Sair</string>
+    <string name="menu_sair">Deslogar</string>
     <string name="menu_share">Compartilhar</string>
     <string name="title_activity_principal2">Adicionar</string>
     <string name="menu_cadastro">Cadastro</string>

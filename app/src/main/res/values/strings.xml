@@ -15,14 +15,13 @@
     <string name="nav_header_title">Rent A Residence</string>
     <string name="nav_header_subtitle">Developer Jefferson Borges</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings Jeffão2</string>
 
     <string name="menu_cadastro">Add record</string>
     <string name="menu_listagem">Listing</string>
     <string name="menu_mapa">Where find us</string>
     <string name="menu_sobre">About</string>]
     <string name="menu_share">Share</string>
-    <string name="menu_sair">Exit</string>
+    <string name="menu_sair">Logout</string>
     <string name="title_activity_principal2">Add</string>
     <string name="tv_user_logout">User successfully logged out</string>
     <string name="title_activity_menu">MenuActivity</string>
