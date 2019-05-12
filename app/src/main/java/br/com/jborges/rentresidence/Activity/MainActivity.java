@@ -49,19 +49,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         estadoAuntenticacao();
 
-        textView = findViewById(R.id.textViewToken);
-
         FirebaseInstanceId.getInstance().getInstanceId()
                 .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
                     @Override
                     public void onComplete(@NonNull Task<InstanceIdResult> task) {
                         if (task.isSuccessful()){
                             String token = task.getResult().getToken();
-                            textView.setText("Token: " + token);
+//                            textView.setText("Token: " + token);
                             Log.d("Token da App", token);
 
                         }else{
-                            Toast.makeText(getBaseContext(), "Deu ruim", Toast.LENGTH_LONG).show();
                             textView.setText(task.getException().getMessage());
                         }
                     }

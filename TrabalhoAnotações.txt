@@ -23,9 +23,17 @@ Tela de Mapa
 - Ajustar layout de tela (não rotacionar)
 
 
-Token:
+Tokens:
 dXlidLt9CmY:APA91bETDZq17iPT-ZVjLlYHwsf_eM3wL4_T2NZHo-o9FdYCvVVngB4w-APuz18jgCszERxDlGmOnosZzyoQYA7IufRz3nlOeKJ4RTApjibewJs_Q7UZvJBTQayrQ3WlXCfhQW2fSHbs
 
 d7CGgh7dJQ8:APA91bEGyfJGHFdAaT2ut3uOJcG4cU9kHSZ6nQvx747jMJQx52LuLiGg_UZgdvZVpHC2JICZahX5Oi8MI2CoZ_IBzjYdopjGdrqxCENwvI59VQofvlKmQa6MWK2N4ArMdAepzvjcXlZP
+d7CGgh7dJQ8:APA91bEGyfJGHFdAaT2ut3uOJcG4cU9kHSZ6nQvx747jMJQx52LuLiGg_UZgdvZVpHC2JICZahX5Oi8MI2CoZ_IBzjYdopjGdrqxCENwvI59VQofvlKmQa6MWK2N4ArMdAepzvjcXlZP
 
 AAAAOBXgRhQ:APA91bHEtTYtHIMWh1QpAwVeabYx1-elpmOsUX22yF47citE6YiLPC1gkIinzrLKT_kEt5jyNwcf1Rp35o8X6lEzNOCmD1QXWPgYIeHGZ_10FW5tZWCKmjyYt01_6jUScLUbFW_KZYGu
+
+
+Link com os Tokens
+https://console.firebase.google.com/project/rentresidence-f46d8/settings/cloudmessaging/
+
+Enviar notification
+https://console.firebase.google.com/project/rentresidence-f46d8/notification
