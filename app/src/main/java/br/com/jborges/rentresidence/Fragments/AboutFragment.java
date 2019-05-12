@@ -39,7 +39,7 @@ public class AboutFragment extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_about, container, false);
         telefone = view.findViewById(R.id.about_telephone_number);
 
-        VersionCode = view.findViewById(R.id.about_version);
+        VersionCode = view.findViewById(R.id.about_version2);
         VersionCode.setText(String.valueOf(1.0));
 
         btnFazer_Ligacao = view.findViewById(R.id.fazerligacao);
