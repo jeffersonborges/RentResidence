@@ -1,10 +1,12 @@
 package br.com.jborges.rentresidence.Firebase;
 
 import android.util.Log;
-
 import com.google.firebase.iid.FirebaseInstanceId;
-
 import static android.content.ContentValues.TAG;
+
+/**
+ * Jefferson Borges - 2019
+ */
 
 public class CDCInstanceIDService extends FirebaseInstanceIdService {
 

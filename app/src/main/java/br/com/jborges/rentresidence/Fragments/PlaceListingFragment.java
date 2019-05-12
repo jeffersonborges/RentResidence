@@ -1,6 +1,7 @@
 package br.com.jborges.rentresidence.Fragments;
 
-
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.jborges.rentresidence.Activity.MainActivity;
 import br.com.jborges.rentresidence.Activity.MenuActivity;
 import br.com.jborges.rentresidence.Adapter.ImovelAdapter;
 import br.com.jborges.rentresidence.Entidade.Imovel;
@@ -33,6 +35,8 @@ public class PlaceListingFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private TextView tvEmptyList;
     private List<Imovel> listaImoveis = new ArrayList<>();
+    private AlertDialog alerta;
+
     ImovelAdapter adapter;
     ImovelDAO imovelDAO;
 
@@ -42,9 +46,7 @@ public class PlaceListingFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_place_listing, container, false);
-
         imovelDAO = new ImovelDAO(getActivity());
-
         listaImoveis = imovelDAO.listar();
 
         tvEmptyList = view.findViewById(R.id.empty_list);
@@ -85,22 +87,50 @@ public class PlaceListingFragment extends Fragment {
         return view;
     }
 
-    public void excluir(Long id) {
-        if (imovelDAO.excluir(id)) {
-            Toast.makeText(this.getActivity(), "Excluído com sucesso!", Toast.LENGTH_SHORT).show();
-            listaImoveis = imovelDAO.listar();
-            adapter.notifyDataSetChanged();
-        } else {
-            Toast.makeText(getActivity(), "Operação não realizada!", Toast.LENGTH_SHORT).show();
-        }
+    public void excluir(final Long id) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());//Cria o gerador do AlertDialog
+        builder.setTitle("Confirmação de Exclusão");//define o titulo
+        builder.setMessage("Deseja excluir este cadastro?");//define a mensagem
+
+        //define um botão como positivo
+        builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+                if (imovelDAO.excluir(id)) {
+                    Toast.makeText(getContext(), "Excluído com sucesso!", Toast.LENGTH_SHORT).show();
+                    listaImoveis = imovelDAO.listar();
+                    adapter.notifyDataSetChanged();
+                } else {
+                    Toast.makeText(getActivity(), "Operação não realizada!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        //define um botão como negativo.
+        builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+
+            }
+        });
+        alerta = builder.create();//cria o AlertDialog
+        alerta.show();//Exibe
     }
 
     public void compartilhar(Long id) {
-//        Toast.makeText(getActivity(), "Vou compartilhar!", Toast.LENGTH_SHORT).show();
-//        enviarWhatsApp("Teste de WhatsApp Jefferson");
 
-        listaImoveis = imovelDAO.listar();
         String mensagemEnviar;
+
+        mensagemEnviar = "";
+        mensagemEnviar = mensagemEnviar + "Dados compartilhados pelo Rent Residence" + "\n" +
+                "Endereço: " + imovelDAO.localizaImovelPorId(id).endereco.trim() + ", " +
+                imovelDAO.localizaImovelPorId(id).numero.trim() + "\n" +
+                "Bairro: " + imovelDAO.localizaImovelPorId(id).bairro.trim() + "\n" +
+                "Cidade/UF: " + imovelDAO.localizaImovelPorId(id).cidade.trim() + " - " +
+                imovelDAO.localizaImovelPorId(id).estado.trim() + "\n" +
+                "Imobiliária: " + imovelDAO.localizaImovelPorId(id).imobiliaria.trim() + "\n" +
+                "Telefone: " + imovelDAO.localizaImovelPorId(id).telefone.trim();
+
+        enviarWhatsApp(mensagemEnviar);
+
     }
 
     public void enviarWhatsApp(String mensagem) {

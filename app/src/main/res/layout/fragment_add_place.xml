@@ -171,7 +171,7 @@
                 android:id="@+id/etTelefone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textCapSentences"/>
+                android:inputType="number"/>
         </LinearLayout>
 
         <LinearLayout

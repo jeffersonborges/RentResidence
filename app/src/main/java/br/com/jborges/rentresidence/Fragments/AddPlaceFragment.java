@@ -1,14 +1,7 @@
-/*
- * Copyright (c) 2019. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
- * Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
- * Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
- * Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
- * Vestibulum commodo. Ut rhoncus gravida arcu.
- */
-
 package br.com.jborges.rentresidence.Fragments;
 
-
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -33,8 +26,9 @@ public class AddPlaceFragment extends Fragment {
     int posicao;
     Long id;
     EditText etEndereco, etNumero, etBairro, etCidade, etEstado, etImobiliaria, etTelefone;
-
     Button btnSalvar, btnFechar, btnExcluir;
+
+    private AlertDialog alerta;
 
     ImovelDAO imovelDAO;
 
@@ -155,14 +149,33 @@ public class AddPlaceFragment extends Fragment {
     }
 
     public void excluir() {
-        if(operacao.equals("alterar")){
-            if ( imovelDAO.excluir(id)) {
-                Toast.makeText(getActivity(), "Excluído com sucesso!", Toast.LENGTH_SHORT).show();
-                fechar();
-            } else {
-                Toast.makeText(getActivity(), "Operação não realizada!", Toast.LENGTH_SHORT).show();
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());//Cria o gerador do AlertDialog
+        builder.setTitle("Confirmação de Exclusão");//define o titulo
+        builder.setMessage("Deseja excluir este cadastro?");//define a mensagem
+
+        //define um botão como positivo
+        builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+
+                if(operacao.equals("alterar")){
+                    if ( imovelDAO.excluir(id)) {
+                        Toast.makeText(getActivity(), "Excluído com sucesso!", Toast.LENGTH_SHORT).show();
+                        fechar();
+                    } else {
+                        Toast.makeText(getActivity(), "Operação não realizada!", Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
-        }
+        });
+        //define um botão como negativo.
+        builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+
+            }
+        });
+        alerta = builder.create();//cria o AlertDialog
+        alerta.show();//Exibe
     }
 
     public void fechar(){
@@ -170,6 +183,5 @@ public class AddPlaceFragment extends Fragment {
             ((MenuActivity)getActivity()).openPlaceListingFragment();
         }
 
-        //Toast.makeText(getActivity(), "Cliquei no botão fechar!", Toast.LENGTH_SHORT).show();
     }
 }

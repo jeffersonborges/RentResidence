@@ -1,11 +1,3 @@
-/*
- * Copyright (c) 2019. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
- * Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
- * Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
- * Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
- * Vestibulum commodo. Ut rhoncus gravida arcu.
- */
-
 package br.com.jborges.rentresidence.Persistencia;
 
 import android.content.ContentValues;
@@ -73,6 +65,7 @@ public class ImovelDAO {
 
         int id = db.update(Imovel.TABELA, values, where, new String[]{String.valueOf(imovel.id)});
         db.close();
+
         if (id > 0)
             listaImoveis.set(listaImoveis.indexOf(localizaImovelPorId(imovel.id)), imovel);
         return id > 0;
@@ -84,8 +77,8 @@ public class ImovelDAO {
 
     public boolean excluir(Long id) {
         SQLiteDatabase db = dbsqLite.getWritableDatabase();
-        String whare = Imovel.CAMPO_ID + " = ?";
-        int ret = db.delete(Imovel.TABELA, whare, new String[]{String.valueOf(id)});
+        String where = Imovel.CAMPO_ID + " = ?";
+        int ret = db.delete(Imovel.TABELA, where, new String[]{String.valueOf(id)});
         db.close();
 
         if (ret > 0)

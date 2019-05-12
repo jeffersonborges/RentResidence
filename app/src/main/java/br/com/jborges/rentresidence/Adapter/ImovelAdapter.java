@@ -1,6 +1,8 @@
 package br.com.jborges.rentresidence.Adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,6 +15,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import br.com.jborges.rentresidence.Activity.MainActivity;
 import br.com.jborges.rentresidence.Activity.MenuActivity;
 import br.com.jborges.rentresidence.Entidade.Imovel;
 import br.com.jborges.rentresidence.Fragments.AddPlaceFragment;
@@ -29,6 +32,7 @@ public class ImovelAdapter extends RecyclerView.Adapter<ImovelAdapter.ViewHolder
     private List<Imovel> imoveis;
     public Context context;
     PlaceListingFragment fragment;
+    private AlertDialog alerta;
 
     String operacao;
     int posicao;
@@ -53,9 +57,9 @@ public class ImovelAdapter extends RecyclerView.Adapter<ImovelAdapter.ViewHolder
         return new ViewHolder(view);
     }
 
-    public void fechar(){
-        if(context != null){
-            ((MenuActivity)context).openPlaceListingFragment();
+    public void fechar() {
+        if (context != null) {
+            ((MenuActivity) context).openPlaceListingFragment();
         }
         //Toast.makeText(getActivity(), "Cliquei no botão fechar!", Toast.LENGTH_SHORT).show();
     }
@@ -86,13 +90,13 @@ public class ImovelAdapter extends RecyclerView.Adapter<ImovelAdapter.ViewHolder
         return imoveis.size();
     }
 
-    public void setContext(Context context){
+    public void setContext(Context context) {
         this.context = context;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
         private TextView tvEndereco;
-        private  TextView tvBairro;
+        private TextView tvBairro;
         private TextView tvCidadeEstado;
         private TextView tvImobiliaria;
         private TextView tvTelefoneImobiliaria;
@@ -113,7 +117,7 @@ public class ImovelAdapter extends RecyclerView.Adapter<ImovelAdapter.ViewHolder
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(context != null && context.getClass().equals(MenuActivity.class)){
+                    if (context != null && context.getClass().equals(MenuActivity.class)) {
                         ((MenuActivity) context).openPlaceDetailsFragment(imoveis.get(getAdapterPosition()), getAdapterPosition());
                     }
                 }
@@ -122,11 +126,11 @@ public class ImovelAdapter extends RecyclerView.Adapter<ImovelAdapter.ViewHolder
 
         private void setData(Imovel imoveis) {
 
-            tvEndereco.setText("Endereço: " + imoveis.endereco + ", " + imoveis.numero);
-            tvBairro.setText("Bairro: " + imoveis.bairro);
-            tvCidadeEstado.setText("Cidade/UF: " +imoveis.cidade + " - " + imoveis.estado);
-            tvImobiliaria.setText("Imobiliária: " + imoveis.imobiliaria);
-            tvTelefoneImobiliaria.setText("Telefone Imobiliária: " +imoveis.telefone);
+            tvEndereco.setText("Endereço: " + imoveis.endereco.trim() + ", " + imoveis.numero.trim());
+            tvBairro.setText("Bairro: " + imoveis.bairro.trim());
+            tvCidadeEstado.setText("Cidade/UF: " + imoveis.cidade.trim() + " - " + imoveis.estado.trim());
+            tvImobiliaria.setText("Imobiliária: " + imoveis.imobiliaria.trim());
+            tvTelefoneImobiliaria.setText("Telefone Imobiliária: " + imoveis.telefone.trim());
         }
     }
 }

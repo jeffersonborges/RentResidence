@@ -1,6 +1,5 @@
 package br.com.jborges.rentresidence.Fragments;
 
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -19,8 +18,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import br.com.jborges.rentresidence.R;
 
 /**
- * A simple {@link Fragment} subclass.
+ * Jefferson Borges - 2019
  */
+
 public class MapFragment extends Fragment {
 
 
