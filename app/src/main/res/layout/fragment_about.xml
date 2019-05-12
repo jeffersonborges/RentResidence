@@ -10,7 +10,7 @@
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/about_title"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -24,8 +24,8 @@
 
     <TextView
         android:id="@+id/about_language"
-        android:layout_width="275dp"
-        android:layout_height="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="5dp"
@@ -74,8 +74,8 @@
 
     <TextView
         android:id="@+id/about_company"
-        android:layout_width="327dp"
-        android:layout_height="21dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="5dp"
@@ -86,8 +86,8 @@
 
     <TextView
         android:id="@+id/about_developer"
-        android:layout_width="290dp"
-        android:layout_height="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="5dp"
@@ -100,7 +100,7 @@
     <TextView
         android:id="@+id/about_telephone_number"
         android:layout_width="wrap_content"
-        android:layout_height="19dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="5dp"
