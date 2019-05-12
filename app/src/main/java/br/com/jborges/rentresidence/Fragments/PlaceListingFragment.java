@@ -1,6 +1,9 @@
 package br.com.jborges.rentresidence.Fragments;
 
 
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -10,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +33,7 @@ public class PlaceListingFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private TextView tvEmptyList;
     private List<Imovel> listaImoveis = new ArrayList<>();
+    ImovelAdapter adapter;
     ImovelDAO imovelDAO;
 
     @Override
@@ -73,11 +78,48 @@ public class PlaceListingFragment extends Fragment {
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(llm);
 
-        ImovelAdapter adapter = new ImovelAdapter(listaImoveis);
+        adapter = new ImovelAdapter(listaImoveis, this);
         adapter.setContext((MenuActivity) getActivity());
         mRecyclerView.setAdapter(adapter);
 
         return view;
+    }
+
+    public void excluir(Long id) {
+        if (imovelDAO.excluir(id)) {
+            Toast.makeText(this.getActivity(), "Excluído com sucesso!", Toast.LENGTH_SHORT).show();
+            listaImoveis = imovelDAO.listar();
+            adapter.notifyDataSetChanged();
+        } else {
+            Toast.makeText(getActivity(), "Operação não realizada!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void compartilhar(Long id) {
+//        Toast.makeText(getActivity(), "Vou compartilhar!", Toast.LENGTH_SHORT).show();
+//        enviarWhatsApp("Teste de WhatsApp Jefferson");
+
+        listaImoveis = imovelDAO.listar();
+        String mensagemEnviar;
+    }
+
+    public void enviarWhatsApp(String mensagem) {
+        PackageManager pm = getContext().getPackageManager();
+        try {
+
+            Intent waIntent = new Intent(Intent.ACTION_SEND);
+            waIntent.setType("text/plain");
+            String text = mensagem;
+
+            PackageInfo info = pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
+            waIntent.setPackage("com.whatsapp");
+
+            waIntent.putExtra(Intent.EXTRA_TEXT, text);
+            startActivity(waIntent);
+
+        } catch (PackageManager.NameNotFoundException e) {
+            Toast.makeText(getActivity(), "WhatsApp não instalado", Toast.LENGTH_SHORT).show();
+        }
     }
 
 }

@@ -69,9 +69,9 @@ public class ImovelDAO {
         values.put(Imovel.CAMPO_IMOBILIARIA, imovel.imobiliaria);
         values.put(Imovel.CAMPO_TELEFONE, imovel.telefone);
         values.put(Imovel.CAMPO_GEOLOCALIZACAO, imovel.geolocalizacao);
-        String whare = Imovel.CAMPO_ID + " = ?";
+        String where = Imovel.CAMPO_ID + " = ?";
 
-        int id = db.update(Imovel.TABELA, values, whare, new String[]{String.valueOf(imovel.id)});
+        int id = db.update(Imovel.TABELA, values, where, new String[]{String.valueOf(imovel.id)});
         db.close();
         if (id > 0)
             listaImoveis.set(listaImoveis.indexOf(localizaImovelPorId(imovel.id)), imovel);
