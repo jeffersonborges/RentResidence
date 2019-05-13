@@ -34,8 +34,8 @@
     <string name="autenticacao">Autenticação</string>
     <string name="autenticando_usuario">Autenticando usuário, por favor, aguarde...</string>
     <string name="insira_campos_obrigatorios">Insira os campos obrigatórios</string>
-    <string name="usuario">Usuário</string>
-    <string name="esta_logado">está logado</string>
+    <string name="usuario">"Usuário "</string>
+    <string name="esta_logado">" está logado"</string>
     <string name="listagem_imoveis">Listagem de imóveis</string>
     <string name="endereco">"Endereço: "</string>
     <string name="bairro">"Bairro: "</string>

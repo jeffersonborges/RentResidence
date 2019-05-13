@@ -45,8 +45,8 @@
     <string name="autenticacao">Authentication</string>
     <string name="autenticando_usuario">Authenticating user, please wait...</string>
     <string name="insira_campos_obrigatorios">Enter the required fields</string>
-    <string name="usuario">User</string>
-    <string name="esta_logado">is logged in</string>
+    <string name="usuario">"User "</string>
+    <string name="esta_logado">" is logged in"</string>
     <string name="listagem_imoveis">Property Listing</string>
     <string name="endereco">"Address: "</string>
     <string name="bairro">"Neighborhood: "</string>
