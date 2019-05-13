@@ -90,23 +90,23 @@ public class PlaceListingFragment extends Fragment {
     public void excluir(final Long id) {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());//Cria o gerador do AlertDialog
-        builder.setTitle("Confirmação de Exclusão");//define o titulo
-        builder.setMessage("Deseja excluir este cadastro?");//define a mensagem
+        builder.setTitle(getString(R.string.confirmacao_exclusao));//define o titulo
+        builder.setMessage(getString(R.string.deseja_excluir_registro));//define a mensagem
 
         //define um botão como positivo
-        builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(getString(R.string.sim), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface arg0, int arg1) {
                 if (imovelDAO.excluir(id)) {
-                    Toast.makeText(getContext(), "Excluído com sucesso!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), getString(R.string.excluido_sucesso), Toast.LENGTH_SHORT).show();
                     listaImoveis = imovelDAO.listar();
                     adapter.notifyDataSetChanged();
                 } else {
-                    Toast.makeText(getActivity(), "Operação não realizada!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), getString(R.string.operacao_nao_realizada), Toast.LENGTH_SHORT).show();
                 }
             }
         });
         //define um botão como negativo.
-        builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(getString(R.string.nao), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface arg0, int arg1) {
 
             }
@@ -120,14 +120,14 @@ public class PlaceListingFragment extends Fragment {
         String mensagemEnviar;
 
         mensagemEnviar = "";
-        mensagemEnviar = mensagemEnviar + "Dados compartilhados pelo Rent Residence" + "\n" +
-                "Endereço: " + imovelDAO.localizaImovelPorId(id).endereco.trim() + ", " +
+        mensagemEnviar = mensagemEnviar + getString(R.string.compartilhado_rent_residence) + "\n" +
+                getString(R.string.endereco) + imovelDAO.localizaImovelPorId(id).endereco.trim() + ", " +
                 imovelDAO.localizaImovelPorId(id).numero.trim() + "\n" +
-                "Bairro: " + imovelDAO.localizaImovelPorId(id).bairro.trim() + "\n" +
-                "Cidade/UF: " + imovelDAO.localizaImovelPorId(id).cidade.trim() + " - " +
+                getString(R.string.bairro) + imovelDAO.localizaImovelPorId(id).bairro.trim() + "\n" +
+                getString(R.string.cidade_uf) + imovelDAO.localizaImovelPorId(id).cidade.trim() + " - " +
                 imovelDAO.localizaImovelPorId(id).estado.trim() + "\n" +
-                "Imobiliária: " + imovelDAO.localizaImovelPorId(id).imobiliaria.trim() + "\n" +
-                "Telefone: " + imovelDAO.localizaImovelPorId(id).telefone.trim();
+                getString(R.string.imobiliaria) + imovelDAO.localizaImovelPorId(id).imobiliaria.trim() + "\n" +
+                getString(R.string.telefone_imobiliaria) + imovelDAO.localizaImovelPorId(id).telefone.trim();
 
         enviarWhatsApp(mensagemEnviar);
 
@@ -148,7 +148,7 @@ public class PlaceListingFragment extends Fragment {
             startActivity(waIntent);
 
         } catch (PackageManager.NameNotFoundException e) {
-            Toast.makeText(getActivity(), "WhatsApp não instalado", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), getString(R.string.whatsapp_nao_instalado), Toast.LENGTH_SHORT).show();
         }
     }
 

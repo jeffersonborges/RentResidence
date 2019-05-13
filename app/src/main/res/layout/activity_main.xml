@@ -26,21 +26,21 @@
         android:id="@+id/button_login"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="LOGIN"
+        android:text="Login"
         android:textAllCaps="false" />
 
     <Button
         android:id="@+id/button_AddUser"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="ADD USER"
+        android:text="@string/bt_Add"
         android:textAllCaps="false" />
 
     <Button
         android:id="@+id/button_Deslogar"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="DESLOGAR"
+        android:text="@string/menu_sair"
         android:textAllCaps="false" />
 
 </LinearLayout>

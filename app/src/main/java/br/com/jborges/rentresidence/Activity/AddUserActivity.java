@@ -67,16 +67,16 @@ public class AddUserActivity extends AppCompatActivity implements View.OnClickLi
         String confirmaSenha = editText_SenhaRepetir.getText().toString().trim();
 
         if (email.isEmpty() || senha.isEmpty() || confirmaSenha.isEmpty()) {
-            Toast.makeText(getBaseContext(), "Erro - Preencha todos os campos", Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(), getString(R.string.preencher_campos), Toast.LENGTH_LONG).show();
         } else {
             if (senha.contentEquals(confirmaSenha)) {
                 if (Util.verificarInternet(this)) {
                     criarUsuario(email, senha);
                 } else {
-                    Toast.makeText(getBaseContext(), "Erro - Verifique conexão com a internet", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), getString(R.string.conexao_internet), Toast.LENGTH_LONG).show();
                 }
             } else {
-                Toast.makeText(getBaseContext(), "Erro - Senhas diferentes", Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), getString(R.string.senhas_diferentes), Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -90,7 +90,7 @@ public class AddUserActivity extends AppCompatActivity implements View.OnClickLi
 
                 if (task.isSuccessful()) {
                     startActivity(new Intent(getBaseContext(), MainActivity.class));
-                    Toast.makeText(getBaseContext(), "Cadastro efetuado com Sucesso", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), getString(R.string.cadastro_sucesso), Toast.LENGTH_LONG).show();
                     finish();
                 } else {
                     String resposta = task.getException().toString();

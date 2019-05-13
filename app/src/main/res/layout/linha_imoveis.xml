@@ -28,7 +28,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Endereço" />
+            tools:text="@string/endereco" />
 
         <TextView
             android:id="@+id/tvBairro"
@@ -44,7 +44,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvEndereco"
-            tools:text="Bairro" />
+            tools:text="@string/bairro" />
 
         <TextView
             android:id="@+id/tvCidadeEstado"
@@ -60,7 +60,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvBairro"
-            tools:text="Cidade Estado" />
+            tools:text="@string/cidade_uf" />
 
         <TextView
             android:id="@+id/tvImobiliaria"
@@ -77,7 +77,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvCidadeEstado"
-            tools:text="Imobiliária" />
+            tools:text="@string/imobiliaria" />
 
         <TextView
             android:id="@+id/tvTelefoneImobiliaria"
@@ -93,7 +93,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvImobiliaria"
-            tools:text="Telefone Imobiliária" />
+            tools:text="@string/telefone_imobiliaria" />
 
         <ImageButton
             android:id="@+id/ib_compartilhar"
@@ -120,8 +120,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTelefoneImobiliaria"
             app:srcCompat="@android:drawable/ic_delete" />
-
-
 
     </android.support.constraint.ConstraintLayout>
 

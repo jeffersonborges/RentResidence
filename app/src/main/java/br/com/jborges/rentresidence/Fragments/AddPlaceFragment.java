@@ -46,18 +46,18 @@ public class AddPlaceFragment extends Fragment {
 
         Bundle bundle = this.getArguments();
 
-        if(bundle != null){
+        if (bundle != null) {
             posicao = bundle.getInt("POSICAO", 0);
-            id = bundle.getLong("ID",0);
+            id = bundle.getLong("ID", 0);
             operacao = bundle.getString("operacao");
-        }else{
+        } else {
             operacao = "inserir";
         }
 
-        if(operacao.equalsIgnoreCase("inserir"))
-            ((MenuActivity)getActivity()).getSupportActionBar().setTitle("Inserir imóvel");
+        if (operacao.equalsIgnoreCase("inserir"))
+            ((MenuActivity) getActivity()).getSupportActionBar().setTitle(getString(R.string.inserir_imovel));
         else
-            ((MenuActivity)getActivity()).getSupportActionBar().setTitle("Alterar dados");
+            ((MenuActivity) getActivity()).getSupportActionBar().setTitle(getString(R.string.alterar_dados));
 
 
         etEndereco = view.findViewById(R.id.etEndereco);
@@ -71,7 +71,7 @@ public class AddPlaceFragment extends Fragment {
         btnExcluir = view.findViewById(R.id.btn_excluir);
         btnFechar = view.findViewById(R.id.btn_fechar);
 
-        if(operacao.equals("alterar")){
+        if (operacao.equals("alterar")) {
             Imovel imovel = ImovelDAO.listaImoveis.get(posicao);
 
             etEndereco.setText(imovel.endereco);
@@ -110,8 +110,14 @@ public class AddPlaceFragment extends Fragment {
     }
 
     public void salvar() {
-        if (operacao.equals("inserir")) {
 
+        if (etEndereco.getText().toString().isEmpty()) {
+            Toast.makeText(getActivity(), getString(R.string.endereco_obrigatorio), Toast.LENGTH_SHORT).show();
+        } else if (etNumero.getText().toString().isEmpty()) {
+            Toast.makeText(getActivity(), getString(R.string.campo_numero_obrigario), Toast.LENGTH_SHORT).show();
+        } else if (etTelefone.getText().toString().isEmpty()) {
+            Toast.makeText(getActivity(), getString(R.string.campo_telefone_obrigatorio), Toast.LENGTH_SHORT).show();
+        } else if (operacao.equals("inserir")) {
             Imovel umImovel = new Imovel();
 
             umImovel.endereco = etEndereco.getText().toString();
@@ -123,12 +129,12 @@ public class AddPlaceFragment extends Fragment {
             umImovel.telefone = etTelefone.getText().toString();
 
             if (imovelDAO.inserir(umImovel)) {
-                Toast.makeText(getActivity(), "Gravado com sucesso!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), getString(R.string.gravado_sucesso), Toast.LENGTH_SHORT).show();
                 fechar();
             } else {
-                Toast.makeText(getActivity(), "Operação não realizada!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), getString(R.string.operacao_nao_realizada), Toast.LENGTH_SHORT).show();
             }
-        }else if(operacao.equals("alterar")){
+        } else if (operacao.equals("alterar")) {
             Imovel umImovel = new Imovel();
             umImovel.id = id;
             umImovel.endereco = etEndereco.getText().toString();
@@ -140,10 +146,10 @@ public class AddPlaceFragment extends Fragment {
             umImovel.telefone = etTelefone.getText().toString();
 
             if (imovelDAO.alterar(umImovel)) {
-                Toast.makeText(getActivity(), "Salvo com sucesso!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), getString(R.string.gravado_sucesso), Toast.LENGTH_SHORT).show();
                 fechar();
             } else {
-                Toast.makeText(getActivity(), "Operação não realizada!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), getString(R.string.operacao_nao_realizada), Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -151,25 +157,25 @@ public class AddPlaceFragment extends Fragment {
     public void excluir() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());//Cria o gerador do AlertDialog
-        builder.setTitle("Confirmação de Exclusão");//define o titulo
-        builder.setMessage("Deseja excluir este cadastro?");//define a mensagem
+        builder.setTitle(getString(R.string.confirmacao_exclusao));//define o titulo
+        builder.setMessage(getString(R.string.deseja_excluir_registro));//define a mensagem
 
         //define um botão como positivo
-        builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(R.string.sim, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface arg0, int arg1) {
 
-                if(operacao.equals("alterar")){
-                    if ( imovelDAO.excluir(id)) {
-                        Toast.makeText(getActivity(), "Excluído com sucesso!", Toast.LENGTH_SHORT).show();
+                if (operacao.equals("alterar")) {
+                    if (imovelDAO.excluir(id)) {
+                        Toast.makeText(getActivity(), R.string.excluido_sucesso, Toast.LENGTH_SHORT).show();
                         fechar();
                     } else {
-                        Toast.makeText(getActivity(), "Operação não realizada!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), R.string.operacao_nao_realizada, Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         });
         //define um botão como negativo.
-        builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(R.string.nao, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface arg0, int arg1) {
 
             }
@@ -178,9 +184,9 @@ public class AddPlaceFragment extends Fragment {
         alerta.show();//Exibe
     }
 
-    public void fechar(){
-        if(getActivity() != null){
-            ((MenuActivity)getActivity()).openPlaceListingFragment();
+    public void fechar() {
+        if (getActivity() != null) {
+            ((MenuActivity) getActivity()).openPlaceListingFragment();
         }
 
     }

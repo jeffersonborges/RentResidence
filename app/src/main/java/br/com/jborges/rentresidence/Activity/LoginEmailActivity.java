@@ -69,7 +69,7 @@ public class LoginEmailActivity extends AppCompatActivity implements View.OnClic
         String email = editText_Email.getText().toString().trim();
         if (email.isEmpty()) {
 
-            Toast.makeText(getBaseContext(), "Insira o seu e-mail para poder recuperar sua senha", Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(), getString(R.string.email_recuperar_senha), Toast.LENGTH_LONG).show();
         } else {
             enviarEmail(email);
         }
@@ -80,7 +80,7 @@ public class LoginEmailActivity extends AppCompatActivity implements View.OnClic
         auth.sendPasswordResetEmail(email).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                Toast.makeText(getBaseContext(), "Enviamos uma mensagem para o seu email com um link para você redefinir a sua senha",
+                Toast.makeText(getBaseContext(), getString(R.string.email_redefinir_senha),
                         Toast.LENGTH_LONG).show();
             }
 
@@ -97,20 +97,20 @@ public class LoginEmailActivity extends AppCompatActivity implements View.OnClic
         String email = editText_Email.getText().toString().trim();
         String senha = editText_Senha.getText().toString().trim();
 
-        dialog = ProgressDialog.show(this, "Autenticação", "Autenticando usuário, por favor, aguarde...",
+        dialog = ProgressDialog.show(this, getString(R.string.autenticacao), getString(R.string.autenticando_usuario),
                 false, true);
 
         if (email.isEmpty() || senha.isEmpty()) {
 
             dialog.dismiss();
-            Toast.makeText(getBaseContext(), "Insira os campos obrigatórios", Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(), getString(R.string.insira_campos_obrigatorios), Toast.LENGTH_LONG).show();
         } else {
             if (Util.verificarInternet(this)) {
 
                 ConnectivityManager conexao = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
                 confirmarLoginEmail(email, senha);
             } else {
-                Toast.makeText(getBaseContext(), "Erro - Verifique a conexão com a sua internet", Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), getString(R.string.conexao_internet), Toast.LENGTH_LONG).show();
             }
         }
     }

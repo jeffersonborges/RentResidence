@@ -51,7 +51,7 @@ public class MenuActivity extends AppCompatActivity
                 .replace(R.id.container, fragment)
                 .commit();
 
-        getSupportActionBar().setTitle("Listagem de imóveis");
+        getSupportActionBar().setTitle(getString(R.string.listagem_imoveis));
 
     }
 
@@ -92,22 +92,21 @@ public class MenuActivity extends AppCompatActivity
         fragmentManager = getSupportFragmentManager(); // For AppCompat use getSupportFragmentManager
 
         if (id == R.id.nav_home) {
-            getSupportActionBar().setTitle("Listagem de imóveis");
+            getSupportActionBar().setTitle(getString(R.string.listagem_imoveis));
             fragment = new PlaceListingFragment();
         } else if (id == R.id.nav_cadastro) {
             fragment = new AddPlaceFragment();
         } else if (id == R.id.nav_onde_encontrar) {
-            getSupportActionBar().setTitle("Onde nos encontrar");
+            getSupportActionBar().setTitle(getString(R.string.menu_mapa));
             //startActivity(new Intent(getBaseContext(), MapsActivity.class));
             //finish();
             fragment = new MapFragment();
         } else if (id == R.id.nav_sobre) {
-            getSupportActionBar().setTitle("Sobre");
+            getSupportActionBar().setTitle(getString(R.string.menu_sobre));
             fragment = new AboutFragment();
-        }
-        else if (id == R.id.nav_sair) {
+        } else if (id == R.id.nav_sair) {
             FirebaseAuth.getInstance().signOut();
-            Toast.makeText(getBaseContext(), "Usuário deslogado com sucesso!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(), getString(R.string.tv_user_logout) + "!", Toast.LENGTH_LONG).show();
             finish();
         }
 
@@ -120,7 +119,7 @@ public class MenuActivity extends AppCompatActivity
         return true;
     }
 
-    public void openPlaceDetailsFragment(Imovel imovel, int position){
+    public void openPlaceDetailsFragment(Imovel imovel, int position) {
         Fragment fragment = new AddPlaceFragment();
         Bundle bundle = new Bundle();
 
@@ -135,7 +134,7 @@ public class MenuActivity extends AppCompatActivity
                 .commit();
     }
 
-    public void openPlaceListingFragment(){
+    public void openPlaceListingFragment() {
         Fragment fragment = new PlaceListingFragment();
         Bundle bundle = new Bundle();
 
@@ -145,6 +144,6 @@ public class MenuActivity extends AppCompatActivity
                 .replace(R.id.container, fragment)
                 .commit();
 
-        getSupportActionBar().setTitle("Listagem de imóveis");
+        getSupportActionBar().setTitle(getString(R.string.listagem_imoveis));
     }
 }

@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
-                    usuario.setText("Usuário " + user.getEmail() + " está logado");
+                    usuario.setText(getString(R.string.usuario) + user.getEmail() + getString(R.string.esta_logado));
                 } else {
                     // Para o nome do usuário conectado
                     usuario.setText("");
@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //Desloga usuário do aplicativo
             case R.id.button_Deslogar:
                 FirebaseAuth.getInstance().signOut();
-                Toast.makeText(getBaseContext(), "Usuário deslogado com sucesso!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), getString(R.string.tv_user_logout), Toast.LENGTH_LONG).show();
                 break;
         }
     }

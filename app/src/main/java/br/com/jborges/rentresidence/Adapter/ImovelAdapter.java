@@ -126,11 +126,11 @@ public class ImovelAdapter extends RecyclerView.Adapter<ImovelAdapter.ViewHolder
 
         private void setData(Imovel imoveis) {
 
-            tvEndereco.setText("Endereço: " + imoveis.endereco.trim() + ", " + imoveis.numero.trim());
-            tvBairro.setText("Bairro: " + imoveis.bairro.trim());
-            tvCidadeEstado.setText("Cidade/UF: " + imoveis.cidade.trim() + " - " + imoveis.estado.trim());
-            tvImobiliaria.setText("Imobiliária: " + imoveis.imobiliaria.trim());
-            tvTelefoneImobiliaria.setText("Telefone Imobiliária: " + imoveis.telefone.trim());
+            tvEndereco.setText(context.getString(R.string.endereco) + imoveis.endereco.trim() + ", " + imoveis.numero.trim());
+            tvBairro.setText(context.getString(R.string.bairro) + imoveis.bairro.trim());
+            tvCidadeEstado.setText(context.getString(R.string.cidade_uf) + imoveis.cidade.trim() + " - " + imoveis.estado.trim());
+            tvImobiliaria.setText(context.getString(R.string.imobiliaria) + imoveis.imobiliaria.trim());
+            tvTelefoneImobiliaria.setText(context.getString(R.string.telefone_imobiliaria) + imoveis.telefone.trim());
         }
     }
 }

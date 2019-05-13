@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="5dp"
-        android:text="Desenvolvedor: Jefferson Borges"
+        android:text="@string/nav_header_subtitle"
         android:textAlignment="center"
         android:textColor="#FCFCFC"
         android:textSize="16sp" />
